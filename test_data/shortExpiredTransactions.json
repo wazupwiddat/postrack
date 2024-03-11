@@ -1,0 +1,36 @@
+[
+    {
+        "CreatedAt": "2023-02-04T20:40:06.257-06:00",
+        "UpdatedAt": "2023-02-04T20:40:06.257-06:00",
+        "DeletedAt": null,
+        "ID": 42595,
+        "UserID": 1,
+        "Account": "Brokerage",
+        "Date": "05/25/2022",
+        "Action": "Sell to Open",
+        "Symbol": "TSLA 06/10/2022 246.67 C",
+        "Description": "CALL TESLA INC $740 EXP 06/10/22",
+        "Quantity": 3,
+        "Price": 11.35,
+        "FeesComm": 0.68,
+        "Amount": 1134.32,
+        "UniqueID": "75241002c38321f4918f369491df47c7"
+    },
+    {
+        "CreatedAt": "2023-02-04T20:40:06.257-06:00",
+        "UpdatedAt": "2023-02-04T20:40:06.257-06:00",
+        "DeletedAt": null,
+        "ID": 42592,
+        "UserID": 1,
+        "Account": "Brokerage",
+        "Date": "06/10/2022",
+        "Action": "Expired",
+        "Symbol": "TSLA 06/10/2022 246.67 C",
+        "Description": "CALL TESLA INC $740 EXP 06/10/22",
+        "Quantity": 3,
+        "Price": 0,
+        "FeesComm": 0,
+        "Amount": 0,
+        "UniqueID": "75241002c38321f4918f369491df47c7"
+    }
+]

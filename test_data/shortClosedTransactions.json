@@ -1,0 +1,53 @@
+[
+    {
+        "CreatedAt": "2023-02-04T20:40:06.257-06:00",
+        "UpdatedAt": "2023-02-04T20:40:06.257-06:00",
+        "DeletedAt": null,
+        "ID": 42481,
+        "UserID": 1,
+        "Account": "Brokerage",
+        "Date": "10/03/2022",
+        "Action": "Sell to Open",
+        "Symbol": "TSLA 11/04/2022 200.00 P",
+        "Description": "PUT TESLA INC $200 EXP 11/04/22",
+        "Quantity": 2,
+        "Price": 6.55,
+        "FeesComm": 1.34,
+        "Amount": 1308.66,
+        "UniqueID": "cbed81adbdef9803868e56eccafa0118"
+    },
+    {
+        "CreatedAt": "2023-02-04T20:40:06.257-06:00",
+        "UpdatedAt": "2023-02-04T20:40:06.257-06:00",
+        "DeletedAt": null,
+        "ID": 42459,
+        "UserID": 1,
+        "Account": "Brokerage",
+        "Date": "10/31/2022",
+        "Action": "Buy to Close",
+        "Symbol": "TSLA 11/04/2022 200.00 P",
+        "Description": "PUT TESLA INC $200 EXP 11/04/22",
+        "Quantity": 1,
+        "Price": 0.74,
+        "FeesComm": 0.65,
+        "Amount": -74.65,
+        "UniqueID": "cbed81adbdef9803868e56eccafa0118"
+    },
+    {
+        "CreatedAt": "2023-02-04T20:40:06.257-06:00",
+        "UpdatedAt": "2023-02-04T20:40:06.257-06:00",
+        "DeletedAt": null,
+        "ID": 42461,
+        "UserID": 1,
+        "Account": "Brokerage",
+        "Date": "10/31/2022",
+        "Action": "Buy to Close",
+        "Symbol": "TSLA 11/04/2022 200.00 P",
+        "Description": "PUT TESLA INC $200 EXP 11/04/22",
+        "Quantity": 1,
+        "Price": 0.74,
+        "FeesComm": 0.65,
+        "Amount": -74.65,
+        "UniqueID": "cbed81adbdef9803868e56eccafa0118"
+    }
+]
