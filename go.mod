@@ -1,11 +1,12 @@
 module github.com/wazupwiddat/postrack
 
-go 1.19
+go 1.22.1
 
 require (
 	github.com/golang-jwt/jwt v3.2.2+incompatible
 	github.com/gorilla/mux v1.8.0
 	github.com/rs/cors v1.8.3
+	github.com/wazupwiddat/schwab-api v0.1.0
 	golang.org/x/crypto v0.5.0
 	gopkg.in/yaml.v2 v2.4.0
 	gorm.io/driver/mysql v1.4.5

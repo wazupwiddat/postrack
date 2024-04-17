@@ -9,6 +9,7 @@ import (
 	"github.com/rs/cors"
 	"github.com/wazupwiddat/postrack/server/config"
 	"github.com/wazupwiddat/postrack/server/controllers"
+	"github.com/wazupwiddat/postrack/server/schwab"
 	"github.com/wazupwiddat/postrack/server/stock"
 	"github.com/wazupwiddat/postrack/server/transaction"
 	"github.com/wazupwiddat/postrack/server/user"
@@ -32,7 +33,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	db.AutoMigrate(&user.User{}, &transaction.Transaction{}, &stock.Stock{})
+	db.AutoMigrate(&user.User{}, &transaction.Transaction{}, &stock.Stock{}, &schwab.SchwabAccess{})
 
 	router := mux.NewRouter()
 	controller := controllers.InitController(db, cfg)
@@ -49,6 +50,8 @@ func main() {
 	protected.HandleFunc("/import", controller.HandleImport).Methods("POST")
 	protected.HandleFunc("/inspect", controller.HandleInspect).Methods("GET")
 	protected.HandleFunc("/inspect/{symbol}", controller.HandleInspectSymbol).Methods("GET")
+	protected.HandleFunc("/schwabaccess", controller.HandleSchwabAccess).Methods("POST")
+	protected.HandleFunc("/schwabimporttrans", controller.HandleSchwabImportTrans).Methods("POST")
 	protected.Use(controller.VerifyJWT)
 
 	http.ListenAndServe(fmt.Sprintf("%s:%s", cfg.Server.Host, cfg.Server.Port), c.Handler(router))

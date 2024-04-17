@@ -25,6 +25,11 @@ type Config struct {
 	Import struct {
 		DownloadPath string `yaml:"path"`
 	} `yaml:"import"`
+	Schwab struct {
+		ClientID     string `yaml:"clientid"`
+		ClientSecret string `yaml:"secret"`
+		AuthRedirect string `yaml:"authredirect"`
+	} `yaml:"schwab"`
 }
 
 // NewConfig returns a new decoded Config struct

@@ -27,14 +27,15 @@ type InspectSymbolRequest struct {
 }
 
 type InspectSymbolResponse struct {
-	DateFrom    string
-	Quote       finance.Quote
-	Premium     float64
-	OpenPremium float64
-	CostBasis   float64
-	Quantity    float64
-	Positions   []transaction.Position
-	Assigned    []transaction.Transaction
+	DateFrom     string
+	Quote        finance.Quote
+	Premium      float64
+	OpenPremium  float64
+	CostBasis    float64
+	Quantity     float64
+	Positions    []transaction.Position
+	Assigned     []transaction.Transaction
+	Transactions []transaction.Transaction
 }
 
 func Inspect(db *gorm.DB, req *InspectRequest) (*InspectResponse, error) {
@@ -136,20 +137,29 @@ func InspectSymbol(db *gorm.DB, req *InspectSymbolRequest) (*InspectSymbolRespon
 		}
 	})
 
+	// Filter buy/sell transactions
+	buySellTrans := trans.Filter(func(trans transaction.Transaction) bool {
+		if transaction.IsOption(trans) {
+			return false
+		}
+		return trans.Action == "Sell" || trans.Action == "Buy"
+	})
+
 	// Compare that against the current price
 	var quote finance.Quote
 	if q != nil {
 		quote = *q
 	}
 	return &InspectSymbolResponse{
-		Quote:       quote,
-		DateFrom:    dateFrom,
-		Premium:     shorts[acct].Value,
-		OpenPremium: open[acct].Value,
-		Assigned:    *assignedTransactions,
-		CostBasis:   costBasis[acct].Value,
-		Quantity:    quant[acct].Value,
-		Positions:   assignedCollectedPositions,
+		Quote:        quote,
+		DateFrom:     dateFrom,
+		Premium:      shorts[acct].Value,
+		OpenPremium:  open[acct].Value,
+		Assigned:     *assignedTransactions,
+		CostBasis:    costBasis[acct].Value,
+		Quantity:     quant[acct].Value,
+		Positions:    assignedCollectedPositions,
+		Transactions: *buySellTrans,
 	}, nil
 }
 
