@@ -18,11 +18,9 @@ require (
 	github.com/stretchr/testify v1.8.1 // indirect
 )
 
-replace github.com/piquette/finance-go => /Users/jameswarren/go/src/github.com/piquette/finance-go
-
 require (
 	github.com/go-sql-driver/mysql v1.7.0 // indirect
 	github.com/jinzhu/inflection v1.0.0 // indirect
 	github.com/jinzhu/now v1.1.5 // indirect
-	github.com/piquette/finance-go v1.1.0
+	github.com/piquette/finance-go v1.1.1-0.20230807033903-430a57233430
 )
